@@ -1,0 +1,24 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 16px;
+    height: 60px;
+    background:#7159c1;
+    color: azure; 
+}
+
+.header a {
+    text-decoration: none;
+}
+
+
+.link{
+    text-decoration: none;
+}
+
+.form{
+    display: flex;
+    justify-content: center;
+
+}
