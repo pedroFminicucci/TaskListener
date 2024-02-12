@@ -1,21 +1,24 @@
-import TaskItem from "./TaskItem"
+import React from 'react';
+import { TodoItem } from './TaskItem';
 
-const TaskList = ({todos, handleUpdateTodo, handleDeleteTodo, handleCompleteTodo}) => {
-  return (
-    <div>
-      <ul>
-        {todos.map(todo => (
-          <TaskItem
-          key={todo.id}
-          todo={todo}
-          handleUpdateTodo={handleUpdateTodo}
-          handleDeleteTodo={handleDeleteTodo}
-          handleCompleteTodo={handleCompleteTodo}
-          />
-        ))}
-        </ul>
-    </div>
-  )
-}
 
-export default TaskList
+export const TodoList = ({
+	todos,
+	handleUpdateTodo,
+	handleDeleteTodo,
+	handleCompleteTodo,
+}) => {
+	return (
+		<ul>
+			{todos.map(todo => (
+				<TodoItem
+					key={todo.id}
+					todo={todo}
+					handleUpdateTodo={handleUpdateTodo}
+					handleDeleteTodo={handleDeleteTodo}
+					handleCompleteTodo={handleCompleteTodo}
+				/>
+			))}
+		</ul>
+	);
+};

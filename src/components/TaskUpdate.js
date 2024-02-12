@@ -1,10 +1,9 @@
-import { FaEdit } from "react-icons/fa";
-import { useRef, useState } from "react";
-import useForm from "./hooks/useForm"
+import { useRef, useState } from 'react';
+import { FaEdit } from 'react-icons/fa';
+import { useForm } from '../hooks/useForm';
 
-
-const TaskUpdate = (todo,handleUpdateTodo,) => {
-  const { updateDescription, onInputChange } = useForm({
+export const TodoUpdate = ({ todo, handleUpdateTodo }) => {
+	const { updateDescription, onInputChange } = useForm({
 		updateDescription: todo.description,
 	});
 
@@ -24,9 +23,8 @@ const TaskUpdate = (todo,handleUpdateTodo,) => {
 		focusInputRef.current.focus();
 	};
 
-  return (
-    <div>
-        <form onSubmit={onSubmitUpdate}>
+	return (
+		<form onSubmit={onSubmitUpdate}>
 			<input
 				type='text'
 				className={`input-update ${
@@ -44,8 +42,5 @@ const TaskUpdate = (todo,handleUpdateTodo,) => {
 				<FaEdit />
 			</button>
 		</form>
-    </div>
-  )
-}
-
-export default TaskUpdate
+	);
+};

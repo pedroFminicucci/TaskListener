@@ -1,8 +1,8 @@
-import { useForm } from "./hooks/useForm";
+import React from 'react';
+import { useForm } from '../hooks/useForm';
 
-const AddTasks = ({handleNewTodo}) => {
-
-  const { description, onInputChange, onResetForm } = useForm({
+export const TodoAdd = ({ handleNewTodo }) => {
+	const { description, onInputChange, onResetForm } = useForm({
 		description: '',
 	});
 
@@ -21,20 +21,20 @@ const AddTasks = ({handleNewTodo}) => {
 		onResetForm();
 	};
 
-  return (
-    <div>
-        <form onSubmit={onFormSubmit}>
-            <input 
-            type="text"
-            className="input-add"
-            name="description"
-            value={description}
-            onChange={onInputChange}
-            placeholder="¿Que hay que hacer?" />
-            <button className="btn-add" type="submit">Agregar</button>
-        </form>
-    </div>
-  )
-}
+	return (
+		<form onSubmit={onFormSubmit}>
+			<input
+				type='text'
+				className='input-add'
+				name='description'
+				value={description}
+				onChange={onInputChange}
+				placeholder='¿Qué hay que hacer?'
+			/>
 
-export default AddTasks
+			<button className='btn-add' type='submit'>
+				Agregar
+			</button>
+		</form>
+	);
+};
