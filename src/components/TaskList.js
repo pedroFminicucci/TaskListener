@@ -1,19 +1,19 @@
+import TaskItem from "./TaskItem"
 
-const TaskList = () => {
+const TaskList = ({todos, handleUpdateTodo, handleDeleteTodo, handleCompleteTodo}) => {
   return (
     <div>
-      <h1>Task List</h1>
       <ul>
-        <li>Task 1</li>
-        <li>Task 2</li>
-        <li>Task 3</li>
-      </ul>
-      <button>Delete Task</button>
-      <button>Edit Task</button>
-      <button>Mark as Completed</button>
-      <button>Sort by Priority</button>
-      <button>Sort by Date</button>
-      <button>Sort by Status</button>
+        {todos.map(todo => (
+          <TaskItem
+          key={todo.id}
+          todo={todo}
+          handleUpdateTodo={handleUpdateTodo}
+          handleDeleteTodo={handleDeleteTodo}
+          handleCompleteTodo={handleCompleteTodo}
+          />
+        ))}
+        </ul>
     </div>
   )
 }
